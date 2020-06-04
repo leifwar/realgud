@@ -48,7 +48,7 @@ realgud-loc-pat struct")
 ;;   > c:\\mydirectory\\gcd.py(10)<module>
 (setf (gethash "loc" realgud:pdb-pat-hash)
       (make-realgud-loc-pat
-       :regexp "^> \\(\\(?:[a-zA-Z]:\\)?[-a-zA-Z0-9_/.\\\\ ]+\\)(\\([0-9]+\\))"
+       :regexp "^\\(?:\\[[0-9]+\\] \\)?> \\(\\(?:[a-zA-Z]:\\)?[-a-zA-Z0-9_/.\\\\ ]+\\)(\\([0-9]+\\))"
        :file-group 1
        :line-group 2))
 
@@ -62,7 +62,7 @@ realgud-loc-pat struct")
 
 (setf (gethash "prompt" realgud:pdb-pat-hash)
       (make-realgud-loc-pat
-       :regexp   "^[(]+Pdb[)]+ "
+       :regexp   "^[(]+Pdb[+]*[)]+ "
        ))
 
 ;; realgud-loc-pat that describes a Python backtrace line.
