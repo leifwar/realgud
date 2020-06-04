@@ -122,9 +122,9 @@ Note that the script name path has been expanded via `expand-file-name'.
       ;; --script-options"
       (setq debugger-name (file-name-sans-extension
 			   (file-name-nondirectory (car args))))
-      (unless (string-match "^\\(pdb\\|cli.py\\)$" debugger-name)
+      (unless (string-match "^\\(pdb\\|cli.py\\|\\(pytest\\|python\\)\\(.py\\)?\\)$" debugger-name)
 	(message
-	 "Expecting debugger name `%s' to be `pdb' or `cli.py'"
+	 "Expecting debugger name `%s' to be `pdb', `cli.py' or `{pytest|python}{.py}'"
 	 debugger-name))
       (setq debugger-args (list (pop args)))
 
